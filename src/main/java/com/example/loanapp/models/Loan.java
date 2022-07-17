@@ -1,49 +1,60 @@
 package com.example.loanapp.models;
 
+import lombok.Data;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Data
+@Entity
+@Table(name = "loan_table")
 public class Loan {
-    private int loan_id;
-    private  String amount;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "loan_id", nullable = false)
+    private int id;
+
+
+    @OneToOne
     private  AppUser user;
+
+    private int amount;
     private LocalDate createdDate = LocalDate.now();
     private LocalDate updatedDate = LocalDate.now();
+
 
     public Loan() {
     }
 
-
-    public Loan(String amount, AppUser user, LocalDate createdDate, LocalDate updatedDate) {
-        this.amount = amount;
+    public Loan(int id, AppUser user, int amount) {
+        this.id = id;
         this.user = user;
+        this.amount = amount;
+    }
+
+    public Loan(AppUser user, int amount, LocalDate createdDate, LocalDate updatedDate) {
+        this.user = user;
+        this.amount = amount;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
     }
 
-    public Loan(int loan_id, String amount, AppUser user, LocalDate createdDate, LocalDate updatedDate) {
-        this.loan_id = loan_id;
-        this.amount = amount;
+    public Loan(int id, AppUser user, int amount, LocalDate createdDate, LocalDate updatedDate) {
+        this.id = id;
         this.user = user;
+        this.amount = amount;
         this.createdDate = createdDate;
         this.updatedDate = updatedDate;
     }
 
 
 
-    public int getLoan_id() {
-        return loan_id;
+    public int getId() {
+        return id;
     }
 
-    public void setLoan_id(int loan_id) {
-        this.loan_id = loan_id;
-    }
-
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public AppUser getUser() {
@@ -52,6 +63,14 @@ public class Loan {
 
     public void setUser(AppUser user) {
         this.user = user;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public LocalDate getCreatedDate() {
@@ -73,9 +92,9 @@ public class Loan {
     @Override
     public String toString() {
         return "Loan{" +
-                "loan_id=" + loan_id +
-                ", amount='" + amount + '\'' +
+                "id=" + id +
                 ", user=" + user +
+                ", amount=" + amount +
                 ", createdDate=" + createdDate +
                 ", updatedDate=" + updatedDate +
                 '}';

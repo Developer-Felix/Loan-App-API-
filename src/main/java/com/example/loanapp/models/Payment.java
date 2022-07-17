@@ -1,12 +1,27 @@
 package com.example.loanapp.models;
 
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Data
+@Entity
+@Table(name = "payments_table")
 public class Payment {
-    private int payment_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "payment_id", nullable = false)
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "load_id_loan_id")
     private Loan load_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id_id")
     private AppUser user_id;
     private int amount;
+    @ManyToOne
+    @JoinColumn(name = "payment_method_id_payment_method_id")
     private PaymentMethod payment_method_id;
-
 
     public Payment() {
     }
@@ -18,20 +33,20 @@ public class Payment {
         this.payment_method_id = payment_method_id;
     }
 
-    public Payment(int payment_id, Loan load_id, AppUser user_id, int amount, PaymentMethod payment_method_id) {
-        this.payment_id = payment_id;
+    public Payment(int id, Loan load_id, AppUser user_id, int amount, PaymentMethod payment_method_id) {
+        this.id = id;
         this.load_id = load_id;
         this.user_id = user_id;
         this.amount = amount;
         this.payment_method_id = payment_method_id;
     }
 
-    public int getPayment_id() {
-        return payment_id;
+    public int getId() {
+        return id;
     }
 
-    public void setPayment_id(int payment_id) {
-        this.payment_id = payment_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Loan getLoad_id() {
@@ -69,7 +84,7 @@ public class Payment {
     @Override
     public String toString() {
         return "Payment{" +
-                "payment_id=" + payment_id +
+                "id=" + id +
                 ", load_id=" + load_id +
                 ", user_id=" + user_id +
                 ", amount=" + amount +

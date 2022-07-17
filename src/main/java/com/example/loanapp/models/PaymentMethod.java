@@ -1,32 +1,50 @@
 package com.example.loanapp.models;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+
+
+@Data
+@Entity
+@Table(name = "payment_method_table")
 public class PaymentMethod {
-    private int payment_method_id;
+    @Id
+    @SequenceGenerator(
+            name = "payment_method_sequence",
+            sequenceName = "payment_method_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator= "payment_method_sequence"
+    )
+    @Column(name = "payment_method_id", nullable = false)
+    private int id;
+    @Column(name = "Name",nullable = false)
     private String name;
-    private LocalDate createdDate = LocalDate.now();
+
+    public PaymentMethod(int id, String name) {
+    }
 
     public PaymentMethod() {
     }
 
-    public PaymentMethod(int payment_method_id, String name, LocalDate createdDate) {
-        this.payment_method_id = payment_method_id;
+
+
+    public PaymentMethod(String name) {
         this.name = name;
-        this.createdDate = createdDate;
     }
 
-    public PaymentMethod(String name, LocalDate createdDate) {
-        this.name = name;
-        this.createdDate = createdDate;
+    public int getId() {
+        return id;
     }
 
-    public int getPayment_method_id() {
-        return payment_method_id;
-    }
-
-    public void setPayment_method_id(int payment_method_id) {
-        this.payment_method_id = payment_method_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,20 +55,11 @@ public class PaymentMethod {
         this.name = name;
     }
 
-    public LocalDate getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDate createdDate) {
-        this.createdDate = createdDate;
-    }
-
     @Override
     public String toString() {
         return "PaymentMethod{" +
-                "payment_method_id=" + payment_method_id +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", createdDate=" + createdDate +
                 '}';
     }
 }
