@@ -20,6 +20,11 @@ public class AppUserService {
     public List<AppUser> getAllUsers() {
         return appUserRepository.findAll();
     }
+    public List<AppUser> searchUser(String query){
+        List<AppUser> result = appUserRepository.searchUsers(query);
+        return result;
+    }
+
 
     public void createUser(AppUser appUser){
         System.out.println(appUser);

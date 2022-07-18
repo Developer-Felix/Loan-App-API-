@@ -8,6 +8,7 @@ RESTful APIs that perform the following:
 6. Search for payment
 
 ## Connect to PostGre SQL
+<img src="screenshots/db.PNG" alt="Get Users">
 
 ## Get All User Accounts
 <img src="screenshots/gud1.PNG" alt="Get Users">

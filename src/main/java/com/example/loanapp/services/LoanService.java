@@ -1,5 +1,6 @@
 package com.example.loanapp.services;
 
+import com.example.loanapp.models.AppUser;
 import com.example.loanapp.models.Loan;
 import com.example.loanapp.repository.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,15 @@ import java.util.List;
 public class LoanService {
     public final LoanRepository loanRepository;
 
+
     @Autowired
     public  LoanService(LoanRepository loanRepository) {
         this.loanRepository = loanRepository;
+    }
+
+    public List<Loan> searchLoan(String query){
+        List<Loan> result = loanRepository.searchLoans(query);
+        return result;
     }
 
      public void createLoan(Loan loan){ System.out.println(loan);
