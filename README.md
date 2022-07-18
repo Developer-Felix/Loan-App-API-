@@ -12,8 +12,11 @@ RESTful APIs that perform the following:
 
 
 ## Getting to understand the flow and users case
-## User Case
-<img src="screenshots/usercase.PNG" alt="Get Users">
+### User Case
+<img src="screenshots/usercase.PNG" alt="User Case">
+
+#### classdiagram
+<img src="screenshots/classdiagram.PNG" alt="Class Diagram">
 
 ## Connect to PostGre SQL
 <img src="screenshots/db.PNG" alt="Get Users">
