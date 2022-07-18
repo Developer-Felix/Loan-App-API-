@@ -10,6 +10,11 @@ RESTful APIs that perform the following:
 5. Make payments to loan, adjust loan balance
 6. Search for payment
 
+
+## Getting to understand the flow and users case
+## User Case
+<img src="screenshots/usercase.PNG" alt="Get Users">
+
 ## Connect to PostGre SQL
 <img src="screenshots/db.PNG" alt="Get Users">
 

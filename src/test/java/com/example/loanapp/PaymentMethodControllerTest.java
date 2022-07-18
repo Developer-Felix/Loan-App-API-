@@ -10,10 +10,11 @@ public class PaymentMethodControllerTest {
 
     @Test
     public void testGetPaymentMethods() throws Exception {
-        mvc.perform(get("/api/v1/payment-methods"))
+        mvc.perform(get("/api/v1/payment_methods"))
                 .andExpect(status().isOk())
                 .andExpect((ResultMatcher) content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect((ResultMatcher) jsonPath("$.[0].name").value("Paypal"))
     }
+
 
 }
