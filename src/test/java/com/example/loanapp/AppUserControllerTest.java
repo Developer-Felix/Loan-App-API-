@@ -12,6 +12,7 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.jsonPath;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 public class AppUserControllerTest {
@@ -38,7 +39,7 @@ public class AppUserControllerTest {
                     .andExpect((ResultMatcher) jsonPath("$.email").value("felix"));
         }
 
-        @Test()
+        @Test
         public void testSearchUser() throws Exception {
             mvc.perform(get("/api/v1/users/search?query=Felix"))
                     .andExpect(status().isOk())

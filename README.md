@@ -46,6 +46,11 @@ RESTful APIs that perform the following:
 <img src="screenshots/ll1.PNG" alt="Create Loan">_
 
 
+# Unit Testing
+## Payments Test
+<img src="screenshots/paymentstest.PNG" alt="PaymentsTest">_
+
+
 
 
 

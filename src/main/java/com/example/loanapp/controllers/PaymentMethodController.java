@@ -3,10 +3,12 @@ package com.example.loanapp.controllers;
 import com.example.loanapp.models.PaymentMethod;
 import com.example.loanapp.services.PaymentMethodService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/api/v1")
@@ -26,8 +28,12 @@ public class PaymentMethodController {
     }
 
     @PostMapping(path="/payment_method")
-    public ResponseEntity<String> createPaymentMethod(@RequestBody PaymentMethod paymentMethod){
+    public ResponseEntity<Object> createPaymentMethod(@RequestBody PaymentMethod paymentMethod){
         paymentMethodService.createPaymentMethod(paymentMethod);
-        return ResponseEntity.ok().body("Payment Method created successfully");
+        return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
+                "message" ,"Payment Method created successfully",
+                "status" ,HttpStatus.CREATED,
+                "statusCode" ,"1"
+        ));
     }
 }
