@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface AppUserRepository extends JpaRepository<AppUser,Integer> {
     //Search User JPQL Query Parameters
-    @Query("SELECT u FROM AppUser u WHERE " + "u.username LIKE CONCAT('%',:query,'%')")
+    @Query(value="SELECT u FROM user_table u WHERE " + "u.username LIKE CONCAT('%',:query,'%')",nativeQuery = true)
     List<AppUser> searchUsers(String query);
 }

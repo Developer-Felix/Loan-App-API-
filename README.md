@@ -39,6 +39,12 @@ RESTful APIs that perform the following:
 ## Create Loan
 <img src="screenshots/lc1.PNG" alt="Create Loan">_
 
+## Search Loan
+<img src="screenshots/sl1.PNG" alt="Create Loan">_
+
+## List Loan
+<img src="screenshots/ll1.PNG" alt="Create Loan">_
+
 
 
 

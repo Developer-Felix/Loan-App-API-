@@ -32,21 +32,21 @@ public class PaymentMethodControllerTest {
                 .andExpect((ResultMatcher) jsonPath("$.[0].name").value("Paypal"));
     }
 
-    @Test
-    public void testGetPaymentMethodsByName() throws Exception {
-        ResultActions paypal = mvc.perform(get("/api/v1/payment_method/Paypal"))
-                .andExpect(status().isOk())
-                .andExpect((ResultMatcher) content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect((ResultMatcher) jsonPath("$.[0].name").value("Paypal"));
-    }
-
-    @Test
-    public void testGetPaymentMethodsByNameNotFound() throws Exception {
-        ResultActions paypal = mvc.perform(get("/api/v1/payment_method/Paypal"))
-                .andExpect(status().isOk())
-                .andExpect((ResultMatcher) content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect((ResultMatcher) jsonPath("$.[0].name").value("Paypal"));
-    }
+//    @Test
+//    public void testGetPaymentMethodsByName() throws Exception {
+//        ResultActions paypal = mvc.perform(get("/api/v1/payment_method/Paypal"))
+//                .andExpect(status().isOk())
+//                .andExpect((ResultMatcher) content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+//                .andExpect((ResultMatcher) jsonPath("$.[0].name").value("Paypal"));
+//    }
+//
+//    @Test
+//    public void testGetPaymentMethodsByNameNotFound() throws Exception {
+//        ResultActions paypal = mvc.perform(get("/api/v1/payment_method/Paypal"))
+//                .andExpect(status().isOk())
+//                .andExpect((ResultMatcher) content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+//                .andExpect((ResultMatcher) jsonPath("$.[0].name").value("Paypal"));
+//    }
 
     @Test
     public void testPostPaymentMethods() throws Exception{

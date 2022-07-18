@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface LoanRepository extends JpaRepository<Loan, Integer> {
-    @Query("SELECT l FROM Loan l WHERE " + "l.amount LIKE CONCAT('%',:query,'%')")
+    @Query(value="SELECT l FROM Loan_table l WHERE " + "l.amount LIKE CONCAT('%',:query,'%')", nativeQuery = true)
     List<Loan> searchLoans(String query);
 }
