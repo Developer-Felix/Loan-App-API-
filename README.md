@@ -1,3 +1,6 @@
+
+# LOAN APP API
+## Problem statement
 Create an application, in java spring boot, that connects to a postgresql database and exposes
 RESTful APIs that perform the following:
 1. Create user
@@ -18,5 +21,8 @@ RESTful APIs that perform the following:
 
 ## Get All Payment Method
 <img src="screenshots/pms1.PNG" alt="Get All Payment Methods">_
+
+## Create Loan
+<img src="screenshots/lc1.PNG" alt="Create Loan">_
 
 
