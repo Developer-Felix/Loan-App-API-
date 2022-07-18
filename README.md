@@ -13,6 +13,12 @@ RESTful APIs that perform the following:
 ## Connect to PostGre SQL
 <img src="screenshots/db.PNG" alt="Get Users">
 
+## Create User
+<img src="screenshots/cu1.PNG" alt="Create User">_
+
+## Make Loan Payments
+<img src="screenshots/cp1.PNG" alt="Make Payments">_
+
 ## Get All User Accounts
 <img src="screenshots/gud1.PNG" alt="Get Users">
 
@@ -24,5 +30,8 @@ RESTful APIs that perform the following:
 
 ## Create Loan
 <img src="screenshots/lc1.PNG" alt="Create Loan">_
+
+
+
 
 
