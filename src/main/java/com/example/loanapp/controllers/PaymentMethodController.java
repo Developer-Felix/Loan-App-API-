@@ -3,6 +3,7 @@ package com.example.loanapp.controllers;
 import com.example.loanapp.models.PaymentMethod;
 import com.example.loanapp.services.PaymentMethodService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,11 +21,13 @@ public class PaymentMethodController {
 
     @GetMapping(path= "/payment_method")
     public List<PaymentMethod> getPaymentMethods(){
-        return paymentMethodService.getPaymentMethods();
+        return
+                paymentMethodService.getPaymentMethods();
     }
 
     @PostMapping(path="/payment_method")
-    public void createPaymentMethod(@RequestBody PaymentMethod paymentMethod){
+    public ResponseEntity<String> createPaymentMethod(@RequestBody PaymentMethod paymentMethod){
         paymentMethodService.createPaymentMethod(paymentMethod);
+        return ResponseEntity.ok().body("Payment Method created successfully");
     }
 }

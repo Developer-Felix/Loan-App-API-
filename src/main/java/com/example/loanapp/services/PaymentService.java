@@ -28,6 +28,7 @@ public class PaymentService {
 
     public void createPayment(Payment payment) {
         Loan loan_id = payment.getLoad_id();
+        System.out.println(loan_id);
         System.out.println("ID: " + loan_id);
         int amount = payment.getAmount();
         System.out.println("Amount: " + amount);
@@ -36,6 +37,9 @@ public class PaymentService {
         Optional<Loan> loan = loanRepository.findById(loan_id.getId());
         System.out.println(loan);
 
+//        loanRepository.updateLoanPayment(loan_id,amount);
+
+        System.out.println("Payment Updated");
         paymentsRepository.save(payment);
     }
 }
