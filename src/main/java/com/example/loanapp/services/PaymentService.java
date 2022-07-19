@@ -34,8 +34,10 @@ public class PaymentService {
         System.out.println("Amount: " + amount);
         System.out.println("createPayment"+payment.getAmount());
 
-        Optional<Loan> loan = loanRepository.findById(loan_id.getId());
-        System.out.println(loan);
+        // Optional<Loan> loan = loanRepository.findById(loan_id.getId());
+        // System.out.println(loan);
+
+        loanRepository.updateLoanBalance(loan_id, amount);
 
 //        loanRepository.updateLoanPayment(loan_id,amount);
 
