@@ -37,9 +37,9 @@ public class PaymentService {
         // Optional<Loan> loan = loanRepository.findById(loan_id.getId());
         // System.out.println(loan);
 
+
         loanRepository.updateLoanBalance(loan_id, amount);
 
-//        loanRepository.updateLoanPayment(loan_id,amount);
 
         System.out.println("Payment Updated");
         paymentsRepository.save(payment);

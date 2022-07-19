@@ -14,5 +14,5 @@ public interface LoanRepository extends JpaRepository<Loan, Integer> {
 
     @Modifying
     @Query(value="update Loan_table l set l.amount = l.amount - :amount where l.id = :id" , nativeQuery = true)
-    void updateLoanBalance(@Param(value = "id") long id, @Param(value = "amount") String amount);
+    void updateLoanBalance(@Param(value = "id") Loan id, @Param(value = "amount") int amount);
 }
